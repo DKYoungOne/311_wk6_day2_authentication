@@ -1,5 +1,5 @@
 const jwksRsa = require('jwks-rsa');
-const jwt = require('express-jwt');
+const { expressjwt: jwt } = require("express-jwt");
 
 const logger = () => {}
 
@@ -12,7 +12,7 @@ const checkJwt = jwt({
   }),
   // Validate the audience and the issuer.
   audience: process.env.AUTH0_IDENTITY,
-  issuer: `https://${process.env.AUTH0_DOMAIN}/`,
+  issuer: `https://${process.env.AUTH0_DOMAIN}`,
   algorithms: ['RS256']
 });
 
