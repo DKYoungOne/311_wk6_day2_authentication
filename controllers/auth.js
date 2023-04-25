@@ -27,7 +27,7 @@ const saltRounds = 10
 
 const login = (req, res) => {
   const { username, password } = req.body
-
+console.log(process.env.AUTH0_DOMAIN);
   axios(`https://${process.env.AUTH0_DOMAIN}/oauth/token`, {
     method: 'POST',
     headers: {
